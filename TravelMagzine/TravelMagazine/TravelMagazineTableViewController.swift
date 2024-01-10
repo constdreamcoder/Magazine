@@ -8,35 +8,57 @@
 import UIKit
 import Kingfisher
 
-struct Magazine {
-    let title: String
-    let subtitle: String
-    let photo_image: String
-    let date: String
-    let link: String
-}
-
-class TravelMagazineTableViewController: UITableViewController {
+final class TravelMagazineTableViewController: UITableViewController {
+    
+    @IBOutlet weak var topImageView: UIImageView!
+    @IBOutlet weak var topTitleLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
+    
     let magazineList: [Magazine] = MagazineInfo().magazine
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureTopUI()
+        configureTableViewUI()
+    }
+}
+
+// MARK: - TravelMagazineTableViewController UI Methods
+extension TravelMagazineTableViewController: TravelMagazineTableViewControllerUIProtocol {
+    func configureTopUI() {
+        topImageView.image = UIImage(systemName: "ellipsis")
+        topImageView.tintColor = .lightGray
+        topImageView.contentMode = .scaleAspectFit
+        
+        topTitleLabel.text = "SeSAC TRAVEL"
+        topTitleLabel.textColor = .black
+        topTitleLabel.textAlignment = .center
+        topTitleLabel.font = .systemFont(ofSize: 20.0, weight: .semibold)
+        
+        separatorView.backgroundColor = .systemGray5
+    }
+}
+
+// MARK: - TableView UI Configuration
+extension TravelMagazineTableViewController: TableViewUIProtocol {
+    func configureTableViewUI() {
         tableView.separatorStyle = .none
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 460
     }
-    
+}
+
+// MARK: - TableView Delegate, Datasource Methods
+extension TravelMagazineTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return magazineList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TravelMagazineTableViewCell", for: indexPath) as! TravelMagazineTableViewCell
-        
-        cell.configureUI()
-        
+                
         let magazine = magazineList[indexPath.row]
         
         let placeholderImage = UIImage(named: "no_image")
@@ -48,7 +70,10 @@ class TravelMagazineTableViewController: UITableViewController {
         
         return cell
     }
-    
+}
+
+// MARK: - TableView Methods
+extension TravelMagazineTableViewController: TableViewMethodsProtocol {
     func getDate(dateString: String) -> String {
         let inputDateFormatter = DateFormatter()
         inputDateFormatter.dateFormat = "yyMMdd"
@@ -60,8 +85,5 @@ class TravelMagazineTableViewController: UITableViewController {
         
         return outputDateFormatter.string(from: date)
     }
-    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 460
-//    }
 }
+
