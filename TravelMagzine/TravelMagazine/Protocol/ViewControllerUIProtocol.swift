@@ -7,6 +7,7 @@
 
 import Foundation
 
-protocol TravelMagazineTableViewControllerUIProtocol: AnyObject {
-    func configureTopUI()
+protocol ViewControllerUIProtocol: AnyObject {
+    func configureUI()
+    func configureNavigation()
 }

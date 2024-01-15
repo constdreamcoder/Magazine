@@ -19,14 +19,23 @@ final class TravelMagazineTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureTopUI()
+        configureUI()
         configureTableViewUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigation()
     }
 }
 
 // MARK: - TravelMagazineTableViewController UI Methods
-extension TravelMagazineTableViewController: TravelMagazineTableViewControllerUIProtocol {
-    func configureTopUI() {
+extension TravelMagazineTableViewController: ViewControllerUIProtocol {
+    func configureNavigation() {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    func configureUI() {
         topImageView.image = UIImage(systemName: "ellipsis")
         topImageView.tintColor = .lightGray
         topImageView.contentMode = .scaleAspectFit
@@ -69,6 +78,12 @@ extension TravelMagazineTableViewController {
         cell.dateLabel.text = getDate(dateString: magazine.date)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let webViewVC = storyboard?.instantiateViewController(withIdentifier: WebViewViewController.identifier) as! WebViewViewController
+        webViewVC.urlString = magazineList[indexPath.row].link
+        navigationController?.pushViewController(webViewVC, animated: true)
     }
 }
 

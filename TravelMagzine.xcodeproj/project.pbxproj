@@ -17,10 +17,12 @@
 		00A6493D2B4BEED000E25389 /* MagazineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A6493C2B4BEED000E25389 /* MagazineInfo.swift */; };
 		00A649412B4BF5B000E25389 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 00A649402B4BF5B000E25389 /* Kingfisher */; };
 		00B02B782B4EDEB000A6B673 /* Magazine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B02B772B4EDEB000A6B673 /* Magazine.swift */; };
-		00B02B7B2B4EDECD00A6B673 /* TravelMagazineTableViewControllerUIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B02B7A2B4EDECD00A6B673 /* TravelMagazineTableViewControllerUIProtocol.swift */; };
+		00B02B7B2B4EDECD00A6B673 /* ViewControllerUIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B02B7A2B4EDECD00A6B673 /* ViewControllerUIProtocol.swift */; };
 		00B02B7D2B4EDEE100A6B673 /* TableViewUIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B02B7C2B4EDEE100A6B673 /* TableViewUIProtocol.swift */; };
 		00B02B7F2B4EDEF000A6B673 /* TableViewMethodsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B02B7E2B4EDEF000A6B673 /* TableViewMethodsProtocol.swift */; };
 		00B02B832B4EDF4E00A6B673 /* TableViewCellUIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B02B822B4EDF4E00A6B673 /* TableViewCellUIProtocol.swift */; };
+		00F79DC82B55062200B0D69D /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F79DC72B55062200B0D69D /* WebViewViewController.swift */; };
+		00F79DCB2B55077900B0D69D /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F79DCA2B55077900B0D69D /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,10 +37,12 @@
 		00A6493A2B4BEEA300E25389 /* TravelMagazineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelMagazineTableViewCell.swift; sourceTree = "<group>"; };
 		00A6493C2B4BEED000E25389 /* MagazineInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagazineInfo.swift; sourceTree = "<group>"; };
 		00B02B772B4EDEB000A6B673 /* Magazine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magazine.swift; sourceTree = "<group>"; };
-		00B02B7A2B4EDECD00A6B673 /* TravelMagazineTableViewControllerUIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelMagazineTableViewControllerUIProtocol.swift; sourceTree = "<group>"; };
+		00B02B7A2B4EDECD00A6B673 /* ViewControllerUIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUIProtocol.swift; sourceTree = "<group>"; };
 		00B02B7C2B4EDEE100A6B673 /* TableViewUIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUIProtocol.swift; sourceTree = "<group>"; };
 		00B02B7E2B4EDEF000A6B673 /* TableViewMethodsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewMethodsProtocol.swift; sourceTree = "<group>"; };
 		00B02B822B4EDF4E00A6B673 /* TableViewCellUIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellUIProtocol.swift; sourceTree = "<group>"; };
+		00F79DC72B55062200B0D69D /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		00F79DCA2B55077900B0D69D /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +90,13 @@
 		00A6493E2B4BEEE400E25389 /* TravelMagazine */ = {
 			isa = PBXGroup;
 			children = (
+				00F79DC72B55062200B0D69D /* WebViewViewController.swift */,
 				00A649382B4BEE7700E25389 /* TravelMagazineTableViewController.swift */,
 				00A6493A2B4BEEA300E25389 /* TravelMagazineTableViewCell.swift */,
 				00B02B802B4EDEFD00A6B673 /* Data */,
 				00B02B812B4EDF0800A6B673 /* Model */,
 				00B02B792B4EDEBC00A6B673 /* Protocol */,
+				00F79DC92B55074000B0D69D /* Extension */,
 			);
 			path = TravelMagazine;
 			sourceTree = "<group>";
@@ -98,7 +104,7 @@
 		00B02B792B4EDEBC00A6B673 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				00B02B7A2B4EDECD00A6B673 /* TravelMagazineTableViewControllerUIProtocol.swift */,
+				00B02B7A2B4EDECD00A6B673 /* ViewControllerUIProtocol.swift */,
 				00B02B7C2B4EDEE100A6B673 /* TableViewUIProtocol.swift */,
 				00B02B7E2B4EDEF000A6B673 /* TableViewMethodsProtocol.swift */,
 				00B02B822B4EDF4E00A6B673 /* TableViewCellUIProtocol.swift */,
@@ -120,6 +126,14 @@
 				00B02B772B4EDEB000A6B673 /* Magazine.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		00F79DC92B55074000B0D69D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				00F79DCA2B55077900B0D69D /* UIViewController+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +215,10 @@
 			files = (
 				00A649252B4BEE4900E25389 /* AppDelegate.swift in Sources */,
 				00A649392B4BEE7700E25389 /* TravelMagazineTableViewController.swift in Sources */,
+				00F79DCB2B55077900B0D69D /* UIViewController+.swift in Sources */,
 				00A6493B2B4BEEA300E25389 /* TravelMagazineTableViewCell.swift in Sources */,
-				00B02B7B2B4EDECD00A6B673 /* TravelMagazineTableViewControllerUIProtocol.swift in Sources */,
+				00B02B7B2B4EDECD00A6B673 /* ViewControllerUIProtocol.swift in Sources */,
+				00F79DC82B55062200B0D69D /* WebViewViewController.swift in Sources */,
 				00B02B782B4EDEB000A6B673 /* Magazine.swift in Sources */,
 				00A649272B4BEE4900E25389 /* SceneDelegate.swift in Sources */,
 				00B02B7F2B4EDEF000A6B673 /* TableViewMethodsProtocol.swift in Sources */,
